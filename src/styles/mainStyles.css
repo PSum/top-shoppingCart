@@ -20,11 +20,25 @@ a {
 .Shoppage {
     display: flex;
     flex: 1;
+    background-color: #EED6D3;
 }
 
-.Homepage,
-.Shoppage {
-    background-color: #EED6D3;
+.Homepage{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10vh 0 10vh;
+}
+
+.Homepage a{
+    color: #67595E;
+}
+
+.Homepage h2,
+.Homepage div{
+    justify-content: center;
+    text-align: center;
 }
 
 .navbar,
