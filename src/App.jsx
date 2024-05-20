@@ -4,15 +4,16 @@ import Navigation from './NavBar';
 import Shoppage from './Shoppage';
 import Homepage from './Homepage';
 import './styles/mainStyles.css'
+import { v4 as uuidv4 } from 'uuid';
 
 const testProducts = [
-  {id: 0, name: 'Harddrive', price: 113},
-  {id: 1, name: 'Smartphone', price: 116.3},
-  {id: 2, name: 'Shampoo', price: 4.99},
-  {id: 3, name: 'JBL-Speaker', price: 99},
+  {id: uuidv4(), name: 'Harddrive', price: 113},
+  {id: uuidv4(), name: 'Smartphone', price: 116.3},
+  {id: uuidv4(), name: 'Shampoo', price: 4.99},
+  {id: uuidv4(), name: 'JBL-Speaker', price: 99},
 ]
 function App() {
-const [shoppingCart, setShoppingCart] = useState(testProducts);
+const [shoppingCart, setShoppingCart] = useState([]);
 const {name}= useParams();
 
 function addShoppingCart (prevArray, newItem){
@@ -27,7 +28,7 @@ function emptyShoppingCart () {
     <div className='content'>
     <Navigation items={shoppingCart} />
       {name === 'shop' ? (
-        <Shoppage></Shoppage>
+        <Shoppage shoppingCart={shoppingCart} addShoppingCart={addShoppingCart} products={testProducts} emptyShoppingCart={emptyShoppingCart}></Shoppage>
       ) : (<Homepage></Homepage>)}
     </div>
   );

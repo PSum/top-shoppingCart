@@ -41,6 +41,10 @@ a {
     text-align: center;
 }
 
+.Shoppage{
+    display: flex;
+}
+
 .navbar,
 .navbar a{
     color: white;
@@ -52,4 +56,33 @@ a {
     display: flex;
     justify-content: space-around;
     font-weight: bold;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 3;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    border: #b69ba4 solid 1px;
+    gap: 3px;
+    padding: 5px;
+}
+
+.Shoppage{
+    display: flex;
+    width:100vw;
+    padding: 5px;
+}
+
+.shoppingCart{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 5px;
+    gap: 8px;
 }
