@@ -10,9 +10,13 @@ const routes = [
     errorElement: <ErrorPage />,
   },
   {
-    path:"shop",
-    element:<Shoppage />,
+    path:"/:name",
+    element:<App />,
   },
+  // {
+  //   path:"shop",
+  //   element:<Shoppage />,
+  // },
 ];
 
 export default routes;

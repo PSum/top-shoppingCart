@@ -1,15 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import './styles/mainStyles.css'
 
 export default function Navigation (props){
     return (
-      <div>
-        <div>
+      <div className="navbar">
           <Link to="/">Home</Link>{" "}
-        </div>
-        <div>
           <Link to="/shop">Shoppage</Link>
+          <div>
+            Number of items in Shopping Cart: {countItems(props.items)}
         </div>
-        <div>Number of items in Shopping Cart: {countItems(props.items)}</div>
       </div>
     );
 }
