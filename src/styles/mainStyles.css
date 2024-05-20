@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
     font-family: Roboto, sans-serif;
+    font-size: 1.1rem ;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .content {
@@ -10,26 +16,26 @@
     min-height: 100vh;
 }
 
-.Homepage {
+.Homepage,
+.Shoppage {
     display: flex;
-    flex: 9;
-    background-color: red;
+    flex: 1;
+}
+
+.Homepage,
+.Shoppage {
+    background-color: #EED6D3;
+}
+
+.navbar,
+.navbar a{
+    color: white;
 }
 
 .navbar {
-    background-color: rebeccapurple;
+    background-color: #A49393;
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    color: white;
-}
-
-.navbar a{
-    text-decoration: none;
-    color: white;
-}
-
-.Shoppage {
-    background-color: blanchedalmond;
-    flex: 1;
+    font-weight: bold;
 }
