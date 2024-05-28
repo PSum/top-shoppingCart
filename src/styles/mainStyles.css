@@ -86,3 +86,12 @@ a {
     padding: 5px;
     gap: 8px;
 }
+
+.description {
+    color: #67595E;
+    font-size: .9rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}

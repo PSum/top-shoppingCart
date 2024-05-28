@@ -4,8 +4,9 @@ function ShowProducts (props){
 const listItems = props.products.map(product => {
 return (
 <div key={uuidv4()} className="item">
-  <h3>{product.name}</h3>
+  <h3>{product.title}</h3>
   <div>Price: {product.price}</div>
+  <div className='description'>{product.description}</div>
   <button onClick={()=> props.addShoppingCart(props.shoppingCart, product)}>Add to Cart</button>
 </div>
 );
@@ -18,14 +19,16 @@ function ShoppingCart (props){
   const listItems = props.shoppingCart.map(item =>{
   return(
 <div key={item.id}>
-  <h3>{item.name}</h3>
+  <h3>{item.title}</h3>
   <div>{item.price}</div>
+  <hr />
 </div>
   )
 })
   return(
     <div className='shoppingCart'>
       <h1>Shopping Cart</h1>
+      <hr />
       <div>
 {listItems}
       </div>

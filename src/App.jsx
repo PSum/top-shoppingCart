@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import Navigation from './NavBar';
 import Shoppage from './Shoppage';
 import Homepage from './Homepage';
 import './styles/mainStyles.css'
 import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 
 const testProducts = [
   {id: uuidv4(), name: 'Harddrive', price: 113},
@@ -15,6 +16,16 @@ const testProducts = [
 function App() {
 const [shoppingCart, setShoppingCart] = useState([]);
 const {name}= useParams();
+const[fakeData, setFakeData] = useState([]);
+
+useEffect(() =>{
+  axios.get('https://fakestoreapi.com/products?limit=5').then(response => {
+    setFakeData(response.data);
+  })
+  .catch(error =>{
+    console.error(error);
+  })
+}, []);
 
 function addShoppingCart (prevArray, newItem){
   const newCart = [...prevArray,newItem];
@@ -28,7 +39,7 @@ function emptyShoppingCart () {
     <div className='content'>
     <Navigation items={shoppingCart} />
       {name === 'shop' ? (
-        <Shoppage shoppingCart={shoppingCart} addShoppingCart={addShoppingCart} products={testProducts} emptyShoppingCart={emptyShoppingCart}></Shoppage>
+        <Shoppage shoppingCart={shoppingCart} addShoppingCart={addShoppingCart} products={fakeData} emptyShoppingCart={emptyShoppingCart}></Shoppage>
       ) : (<Homepage></Homepage>)}
     </div>
   );
